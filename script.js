@@ -53,8 +53,10 @@ let examples = [];
 function selectExample(id) {
   const example = examples.find(item => item.id === id);
   if (!example) return;
+  resetExampleTimer();
   $$('.demo-tabs button').forEach(tab => { const selected = tab.dataset.id === id; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; });
   $('#demo-panel').setAttribute('aria-labelledby', `tab-${id}`);
+  $('#demo-panel').scrollTop = 0;
   $('#demo-question').textContent = example.question;
   $('#answer-badge').textContent = example.result.mode === 'refused' ? 'Graded-work refusal' : example.category === 'unsupported' ? 'Outside the corpus' : 'Saved live output';
   $('#demo-answer').innerHTML = renderAnswer(example.result.text);
@@ -147,3 +149,156 @@ accordionPanels.forEach(details => {
     setExpanded(next);
   });
 });
+
+// Progressive motion: reveal once on entry, with content visible if JS is unavailable.
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+if (!motionPreference.matches && 'IntersectionObserver' in window) {
+  const revealTargets = $$('.hero-copy, .hero-art, .problem > div, .section-top, .video-frame, .demo-shell, .pipeline article, .two-routes > div, .results-grid, .evidence-links a, .setup-row, .success-box, .setup-detail, .closing-inner, footer');
+  const reveal = element => {
+    element.classList.add('is-revealed');
+    observer.unobserve(element);
+  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if (entry.isIntersecting) reveal(entry.target); });
+  }, {threshold: 0.06, rootMargin: '0px 0px -24px 0px'});
+  revealTargets.forEach(element => {
+    element.classList.add('reveal-on-scroll');
+    if (element.matches('.hero-art')) element.style.setProperty('--reveal-delay', '120ms');
+    if (element.matches('.pipeline article, .evidence-links a')) {
+      const index = [...element.parentElement.children].indexOf(element);
+      element.style.setProperty('--reveal-delay', `${index * 70}ms`);
+    }
+    observer.observe(element);
+  });
+  // Keyboard navigation must never land on an invisible control.
+  document.addEventListener('focusin', event => {
+    const target = event.target.closest('.reveal-on-scroll');
+    if (target) reveal(target);
+  });
+  motionPreference.addEventListener('change', event => {
+    if (event.matches) {
+      observer.disconnect();
+      revealTargets.forEach(element => element.classList.add('is-revealed'));
+    }
+  });
+}
+
+// Orange placeholder and moving perimeter while the embedded document loads.
+const videoFrame = $('.video-frame');
+const videoPlayer = $('iframe', videoFrame);
+const videoPlaceholder = $('.video-placeholder', videoFrame);
+videoPlaceholder.hidden = false;
+videoFrame.classList.add('is-loading');
+videoFrame.setAttribute('aria-busy', 'true');
+let videoFallback;
+function revealVideo() {
+  clearTimeout(videoFallback);
+  videoFrame.classList.remove('is-loading');
+  videoFrame.classList.add('is-loaded');
+  videoFrame.setAttribute('aria-busy', 'false');
+}
+videoPlayer.addEventListener('load', revealVideo, {once:true});
+// Do not leave a slow or blocked third-party frame trapped behind our placeholder.
+if ('IntersectionObserver' in window) {
+  const loadingObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      videoFallback = setTimeout(revealVideo, 15000);
+      loadingObserver.disconnect();
+    }
+  });
+  loadingObserver.observe(videoFrame);
+} else videoFallback = setTimeout(revealVideo, 15000);
+
+// Example carousel: advance while visible unless explicitly paused.
+const rotation = $('.demo-rotation');
+const rotationToggle = $('.rotation-toggle');
+const rotationStatus = $('.rotation-status');
+const timerFills = $$('.tab-progress > i');
+const exampleShell = $('.demo-shell');
+const EXAMPLE_DURATION = 3000;
+let exampleElapsed = 0;
+let examplePaused = motionPreference.matches;
+let exampleVisible = false;
+let exampleLastTick = performance.now();
+function resetExampleTimer() {
+  exampleElapsed = 0;
+  timerFills.forEach(fill => { fill.style.transform = 'scaleY(0)'; });
+}
+function pauseExampleRotation() {
+  examplePaused = true;
+  updateRotationUI();
+}
+function updateRotationUI() {
+  rotationStatus.textContent = examplePaused ? 'Auto advance paused' : 'Next example';
+  rotationToggle.setAttribute('aria-label', examplePaused ? 'Resume automatic examples' : 'Pause automatic examples');
+  $('span', rotationToggle).textContent = examplePaused ? 'Play' : 'Pause';
+  $('use', rotationToggle).setAttribute('href', `assets/fontawesome-solid.svg#${examplePaused ? 'play' : 'pause'}`);
+  $('#demo-answer').setAttribute('aria-live', examplePaused ? 'polite' : 'off');
+}
+rotation.hidden = false;
+updateRotationUI();
+rotationToggle.addEventListener('click', () => {
+  examplePaused = !examplePaused;
+  updateRotationUI();
+});
+if ('IntersectionObserver' in window) {
+  const rotationObserver = new IntersectionObserver(entries => {
+    exampleVisible = entries[0].isIntersecting && entries[0].intersectionRatio >= 0.2;
+  }, {threshold:[0,0.2]});
+  rotationObserver.observe(exampleShell);
+}
+setInterval(() => {
+  const now = performance.now();
+  const delta = Math.min(now - exampleLastTick, 500);
+  exampleLastTick = now;
+  if (!examples.length || !exampleVisible || examplePaused || document.hidden) return;
+  exampleElapsed += delta;
+  if (exampleElapsed >= EXAMPLE_DURATION) {
+    const active = $('.demo-tabs [aria-selected="true"]');
+    const index = tabs.indexOf(active);
+    selectExample(tabs[(index + 1) % tabs.length].dataset.id);
+    updateRotationUI();
+  }
+  timerFills.forEach(fill => {
+    const active = fill.closest('[role="tab"]').getAttribute('aria-selected') === 'true';
+    fill.style.transform = `scaleY(${active ? Math.min(1, exampleElapsed / EXAMPLE_DURATION) : 0})`;
+  });
+}, 100);
+motionPreference.addEventListener('change', event => { if (event.matches) pauseExampleRotation(); });
+
+// Character reveal keeps the final heading's layout and orange emphasis intact.
+const closingHeading = $('.closing h2');
+if (!motionPreference.matches && 'IntersectionObserver' in window) {
+  closingHeading.setAttribute('aria-label', 'Keep the “aha” moments. Skip the search.');
+  let characterIndex = 0;
+  const walker = document.createTreeWalker(closingHeading, NodeFilter.SHOW_TEXT);
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  textNodes.forEach(node => {
+    const fragment = document.createDocumentFragment();
+    node.textContent.split(/(\s+)/).forEach(token => {
+      if (!token) return;
+      if (/^\s+$/.test(token)) { fragment.append(document.createTextNode(token)); return; }
+      const word = document.createElement('span');
+      word.className = 'type-word';
+      word.setAttribute('aria-hidden','true');
+      [...token].forEach(character => {
+        const letter = document.createElement('span');
+        letter.className = 'type-char';
+        letter.textContent = character;
+        letter.style.setProperty('--char-index', characterIndex++);
+        word.append(letter);
+      });
+      fragment.append(word);
+    });
+    node.replaceWith(fragment);
+  });
+  closingHeading.classList.add('type-ready');
+  const typingObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      closingHeading.classList.add('is-typing');
+      typingObserver.disconnect();
+    }
+  }, {threshold:0.2});
+  typingObserver.observe(closingHeading);
+}
