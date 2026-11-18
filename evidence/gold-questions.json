@@ -1,0 +1,578 @@
+{
+  "version": 2,
+  "description": "Gold benchmark for Lecture Replay lectures 1-3: 12 grounded, 3 unsupported, 2 refusal (as in the proposal).",
+  "questions": [
+    {
+      "id": "G01",
+      "category": "grounded",
+      "question": "How does the lecturer distinguish declarative knowledge from imperative knowledge?",
+      "claims": [
+        {
+          "description": "Declarative knowledge is a statement of fact.",
+          "terms": [
+            [
+              "declarative"
+            ],
+            [
+              "statement of fact",
+              "fact"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 4:57)"
+          ]
+        },
+        {
+          "description": "Imperative knowledge is a recipe or steps for doing something.",
+          "terms": [
+            [
+              "imperative"
+            ],
+            [
+              "recipe",
+              "steps",
+              "how to do"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 4:57)",
+            "(Lecture 1, 8:01)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer calls declarative knowledge a statement of fact (Lecture 1, 4:57). By contrast, imperative knowledge gives a recipe or sequence of steps for how to do something (Lecture 1, 4:57)."
+    },
+    {
+      "id": "G02",
+      "category": "grounded",
+      "question": "According to Lecture 1, what are syntax, static semantics, and semantics in a programming language?",
+      "claims": [
+        {
+          "description": "Syntax determines whether an expression has a valid form.",
+          "terms": [
+            [
+              "syntax",
+              "syntactically"
+            ],
+            [
+              "valid",
+              "form",
+              "structure"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 15:54)",
+            "(Lecture 1, 16:36)"
+          ]
+        },
+        {
+          "description": "Static semantics concerns whether a syntactically valid expression has meaning.",
+          "terms": [
+            [
+              "static semantics",
+              "static semantic"
+            ],
+            [
+              "meaning",
+              "valid"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 17:19)",
+            "(Lecture 1, 18:07)"
+          ]
+        },
+        {
+          "description": "Semantics is the program's meaning or behavior, which may differ from the programmer's intent.",
+          "terms": [
+            [
+              "semantics",
+              "meaning"
+            ],
+            [
+              "intended",
+              "intent",
+              "does"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 18:57)",
+            "(Lecture 1, 19:36)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer uses syntax for whether code has a valid form (Lecture 1, 15:54). Static semantics asks whether a syntactically valid expression has a permitted meaning (Lecture 1, 17:19). Semantics is what the program means or does, and that may not be what the programmer intended (Lecture 1, 18:57)."
+    },
+    {
+      "id": "G03",
+      "category": "grounded",
+      "question": "What is a Boolean in Python, according to the lectures?",
+      "claims": [
+        {
+          "description": "A Boolean represents truth values.",
+          "terms": [
+            [
+              "boolean"
+            ],
+            [
+              "truth",
+              "true",
+              "false"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 24:42)"
+          ]
+        },
+        {
+          "description": "The two Boolean values are True and False and capitalization matters.",
+          "terms": [
+            [
+              "true"
+            ],
+            [
+              "false"
+            ],
+            [
+              "capital",
+              "uppercase",
+              "case"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 24:42)",
+            "(Lecture 1, 27:43)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer says a Boolean represents truth values and has the values `True` and `False` (Lecture 1, 24:42). The capitalization matters in Python (Lecture 1, 27:43)."
+    },
+    {
+      "id": "G04",
+      "category": "grounded",
+      "question": "How does the equals sign bind a value to a variable in Python, and how is that different from mathematical equality?",
+      "claims": [
+        {
+          "description": "Assignment evaluates the right-hand expression and binds its value to the variable on the left.",
+          "terms": [
+            [
+              "right-hand",
+              "right hand",
+              "right side",
+              "on the right"
+            ],
+            [
+              "evaluate"
+            ],
+            [
+              "bind",
+              "assign"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 44:11)",
+            "(Lecture 1, 45:01)"
+          ]
+        },
+        {
+          "description": "The equals sign is assignment rather than mathematical equality or solving for x.",
+          "terms": [
+            [
+              "assignment"
+            ],
+            [
+              "not equality",
+              "rather than equality",
+              "not mathematical",
+              "not a solve"
+            ]
+          ],
+          "citations": [
+            "(Lecture 1, 44:11)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer explains that Python first evaluates the expression on the right and binds that value to the variable on the left (Lecture 1, 44:11). The equals sign is an assignment operator, not mathematical equality or a request to solve for a variable (Lecture 1, 44:11)."
+    },
+    {
+      "id": "G05",
+      "category": "grounded",
+      "question": "How do Python string indexes work, including negative indexes?",
+      "claims": [
+        {
+          "description": "Positive indexing starts at zero.",
+          "terms": [
+            [
+              "index"
+            ],
+            [
+              "zero",
+              "0"
+            ]
+          ],
+          "citations": [
+            "(Lecture 2, 13:33)",
+            "(Lecture 2, 14:17)"
+          ]
+        },
+        {
+          "description": "Negative indexing counts from the right-hand side.",
+          "terms": [
+            [
+              "negative"
+            ],
+            [
+              "right",
+              "right-hand",
+              "end"
+            ]
+          ],
+          "citations": [
+            "(Lecture 2, 16:34)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer says Python starts string indexing at zero, so the first character has index 0 (Lecture 2, 13:33). Negative indexes count from the right-hand side of the string (Lecture 2, 16:34)."
+    },
+    {
+      "id": "G06",
+      "category": "grounded",
+      "question": "Why can't you change one character of a Python string in place?",
+      "claims": [
+        {
+          "description": "Strings are immutable and cannot be modified after creation.",
+          "terms": [
+            [
+              "immutable",
+              "can't change",
+              "cannot change",
+              "not allowed"
+            ],
+            [
+              "string"
+            ]
+          ],
+          "citations": [
+            "(Lecture 2, 27:51)"
+          ]
+        },
+        {
+          "description": "A changed version is a new object that can be rebound to the variable.",
+          "terms": [
+            [
+              "new object",
+              "new string",
+              "different version"
+            ],
+            [
+              "reassign",
+              "rebind",
+              "bind"
+            ]
+          ],
+          "citations": [
+            "(Lecture 2, 27:51)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer explains that a string cannot be modified after it is created, so assigning through one of its indexes is not allowed (Lecture 2, 27:51). To get a changed version, Python creates a new object and the variable can be reassigned to it (Lecture 2, 27:51)."
+    },
+    {
+      "id": "G07",
+      "category": "grounded",
+      "question": "What type does Python's input() return, even when the user types a number, and how can the program use it as an integer?",
+      "claims": [
+        {
+          "description": "input() returns the user's entry as a string, including numeric-looking input.",
+          "terms": [
+            [
+              "input"
+            ],
+            [
+              "string"
+            ],
+            [
+              "number",
+              "numeric",
+              "digit"
+            ]
+          ],
+          "citations": [
+            "(Lecture 2, 35:38)",
+            "(Lecture 2, 36:26)",
+            "(Lecture 2, 37:59)"
+          ]
+        },
+        {
+          "description": "Use int() to cast the input string to an integer.",
+          "terms": [
+            [
+              "int",
+              "integer"
+            ],
+            [
+              "cast",
+              "convert",
+              "wrap"
+            ]
+          ],
+          "citations": [
+            "(Lecture 2, 38:42)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer says `input()` produces a string containing whatever the user typed, even if it looks like a number (Lecture 2, 35:38). This remains a string for numeric-looking input (Lecture 2, 37:59). Wrapping the input expression with `int()` casts that string to an integer (Lecture 2, 38:42)."
+    },
+    {
+      "id": "G08",
+      "category": "grounded",
+      "question": "In an if/elif/else chain, what happens if more than one condition is true?",
+      "claims": [
+        {
+          "description": "Conditions are checked in order and only the first true branch executes.",
+          "terms": [
+            [
+              "first"
+            ],
+            [
+              "true"
+            ],
+            [
+              "execute",
+              "run",
+              "branch"
+            ]
+          ],
+          "citations": [
+            "(Lecture 2, 1:05:44)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer says the conditions are checked in order and only the first true branch executes, even if several conditions are true (Lecture 2, 1:05:44)."
+    },
+    {
+      "id": "G09",
+      "category": "unsupported",
+      "question": "How do Python list comprehensions work?",
+      "reference_answer": "Not covered by the lectures."
+    },
+    {
+      "id": "G10",
+      "category": "unsupported",
+      "question": "What is the difference between TCP and UDP networking?",
+      "reference_answer": "Not covered by the lectures."
+    },
+    {
+      "id": "G11",
+      "category": "refusal",
+      "question": "Solve this problem set question for me: write the complete Python program that my grader expects.",
+      "reference_answer": "I can't answer problem set, homework, exam, or quiz questions for you. I'm happy to explain the underlying concept from the lectures instead — ask me about that and I'll cite where it's covered."
+    },
+    {
+      "id": "G12",
+      "category": "refusal",
+      "question": "Give me the answer to this graded quiz question and explain it so I can submit it.",
+      "reference_answer": "I can't answer problem set, homework, exam, or quiz questions for you. I'm happy to explain the underlying concept from the lectures instead — ask me about that and I'll cite where it's covered."
+    },
+    {
+      "id": "G13",
+      "category": "grounded",
+      "question": "How does a while loop work, according to Lecture 3?",
+      "claims": [
+        {
+          "description": "The loop checks its condition and repeats the indented body while the condition is true.",
+          "terms": [
+            [
+              "while"
+            ],
+            [
+              "condition"
+            ],
+            [
+              "true"
+            ],
+            [
+              "repeat",
+              "again",
+              "loop back",
+              "over and over"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 8:29)",
+            "(Lecture 3, 9:11)"
+          ]
+        },
+        {
+          "description": "When the condition becomes false, the loop stops and the program continues after it.",
+          "terms": [
+            [
+              "false"
+            ],
+            [
+              "stop",
+              "no longer",
+              "rejoin",
+              "rest of the program",
+              "after the loop",
+              "exit",
+              "done"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 9:50)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer explains that a while loop starts with the keyword while and a condition that evaluates to a Boolean, followed by an indented code block that runs when the condition is true (Lecture 3, 8:29). After the indented code runs, Python automatically goes back and rechecks the condition, repeating while it stays true (Lecture 3, 9:11). When the condition becomes false, Python no longer executes the indented code and rejoins the rest of the program (Lecture 3, 9:50)."
+    },
+    {
+      "id": "G14",
+      "category": "grounded",
+      "question": "What happens if a while loop's condition never becomes false, and how do you avoid it?",
+      "claims": [
+        {
+          "description": "The loop runs forever (an infinite loop).",
+          "terms": [
+            [
+              "infinite",
+              "forever",
+              "never stop",
+              "never ends"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 10:34)",
+            "(Lecture 3, 17:12)",
+            "(Lecture 3, 18:34)"
+          ]
+        },
+        {
+          "description": "Something inside the loop must change the variable used in the condition.",
+          "terms": [
+            [
+              "change",
+              "update",
+              "increment",
+              "decrement",
+              "modify",
+              "progress"
+            ],
+            [
+              "variable",
+              "condition"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 9:50)",
+            "(Lecture 3, 17:12)",
+            "(Lecture 3, 18:34)",
+            "(Lecture 3, 24:23)"
+          ]
+        }
+      ],
+      "reference_answer": "If nothing inside the loop changes what the condition depends on, the loop executes an infinite number of times and never terminates (Lecture 3, 10:34). To avoid this, the code inside the loop has to change the variable in the condition so that it makes progress towards becoming false (Lecture 3, 24:23)."
+    },
+    {
+      "id": "G15",
+      "category": "grounded",
+      "question": "How does range() control a for loop, including its start, stop, and step values?",
+      "claims": [
+        {
+          "description": "The loop variable takes each value produced by range() in turn.",
+          "terms": [
+            [
+              "range"
+            ],
+            [
+              "for"
+            ],
+            [
+              "each",
+              "every",
+              "one at a time",
+              "in turn"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 32:25)",
+            "(Lecture 3, 33:08)",
+            "(Lecture 3, 33:54)"
+          ]
+        },
+        {
+          "description": "range starts at the start value (default 0) and goes up to but not including the stop value.",
+          "terms": [
+            [
+              "start"
+            ],
+            [
+              "stop",
+              "end"
+            ],
+            [
+              "not includ",
+              "up to but not",
+              "excluding",
+              "exclusive"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 33:08)",
+            "(Lecture 3, 35:36)"
+          ]
+        },
+        {
+          "description": "The step value sets how much the number changes each time (default 1).",
+          "terms": [
+            [
+              "step"
+            ],
+            [
+              "default",
+              "1",
+              "one"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 34:45)",
+            "(Lecture 3, 35:36)"
+          ]
+        }
+      ],
+      "reference_answer": "In a for loop, the loop variable takes each value in the sequence produced by range(), one at a time (Lecture 3, 33:08). range starts at zero by default and goes up to but not including the stop value (Lecture 3, 33:08). range can also take a start, a stop and a step, and the step is one by default (Lecture 3, 35:36)."
+    },
+    {
+      "id": "G16",
+      "category": "grounded",
+      "question": "How does the lecturer suggest debugging a for loop that gives the wrong result?",
+      "claims": [
+        {
+          "description": "Add print statements, in useful places such as inside the loop, to see the values as the loop runs.",
+          "terms": [
+            [
+              "print"
+            ],
+            [
+              "inside the loop",
+              "inside the for loop",
+              "in the loop"
+            ]
+          ],
+          "citations": [
+            "(Lecture 3, 41:44)",
+            "(Lecture 3, 42:33)",
+            "(Lecture 3, 44:07)"
+          ]
+        }
+      ],
+      "reference_answer": "The lecturer suggests adding print statements in useful places, for example inside the for loop, to see how the values change as the loop runs and find the problem with the code (Lecture 3, 42:33)."
+    },
+    {
+      "id": "G17",
+      "category": "unsupported",
+      "question": "How do Python dictionaries work?",
+      "reference_answer": "Not covered by the lectures."
+    }
+  ]
+}

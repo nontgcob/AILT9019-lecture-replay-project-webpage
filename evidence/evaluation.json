@@ -1,0 +1,1043 @@
+{
+  "summary": {
+    "questions_passed": 17,
+    "questions_total": 17,
+    "points": 81,
+    "points_possible": 81,
+    "percent": 100.0,
+    "by_category": {
+      "grounded": {
+        "passed": 12,
+        "total": 12
+      },
+      "unsupported": {
+        "passed": 3,
+        "total": 3
+      },
+      "refusal": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "grounded_pass_bar": 9,
+    "passed": true
+  },
+  "run": {
+    "model": "qwen3.8-flash",
+    "endpoint_host": "token-plan.cn-beijing.maas.aliyuncs.com",
+    "run_date": "2026-11-12T18:32:36+00:00",
+    "corpus_commit": "956d7bd"
+  },
+  "results": [
+    {
+      "id": "G01",
+      "category": "grounded",
+      "question": "How does the lecturer distinguish declarative knowledge from imperative knowledge?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 1, the lecturer explains that **declarative knowledge is a statement of fact**, while **imperative knowledge is a recipe for how to do something** (Lecture 1, 4:57). She says that computer science uses imperative knowledge, because programming means writing step-by-step instructions for the computer to follow (Lecture 1, 4:57).\n\nShe gives the example of a square root: a declarative statement might say that the square root of a number X is Y such that Y times Y equals X, but a computer would not know what to do with that statement (Lecture 1, 5:36). Instead, an imperative version gives the computer a procedure: start with a guess, check whether it is close enough, otherwise make a new guess and repeat until it stops (Lecture 1, 5:36) (Lecture 1, 6:19).\n\nShe also connects this distinction to variables: in math, variables can express declarative relationships, but in computer science we use imperative assignment statements that bind a name to a value (Lecture 1, 42:00) (Lecture 1, 42:39).",
+        "citations": [
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "4:57",
+            "paragraph_text": "questions — again, as I said, a bunch of this information is already in the handout, plus more — we can begin. Okay, so let's start by talking about knowledge. Declarative knowledge is a statement of fact, and a lot of us, probably in math and in the past, have worked with declarative knowledge. But this is not how computer science — this is not how this class works. In computer science, what we do is we work with imperative knowledge, which is basically a recipe for how to do something, and when we're programming, all we're doing is writing a recipe for the computer to do something.",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=297s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "5:36",
+            "paragraph_text": "That's it. So here's a numerical example: the first statement is a declarative statement — the square root of a number X is Y such that Y times Y is equal to X. There are many possible values for X and Y for which this statement can be true, but if we gave that statement to a computer, it wouldn't know what to do with it. What we need to do is tell the computer how to find the square root of a number, and then tell us what the square root of that number is. And so the computer then needs a recipe — a really simple one, for finding the square root of a number, is steps one, two, three. So what we do is, let's say we want to find the square root of",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=336s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "6:19",
+            "paragraph_text": "16. We obviously know it's four, but the computer doesn't, and so we give it an initial guess — let's say the guess is three. How do we go from there? So the steps we follow: step one, if 3 times 3, nine, is close enough to 16, we can stop. It's not really close enough for me, so let's keep going. Step two, otherwise, we're going to make a new guess by averaging G, which is our original guess, three, and X over G, which is 16 over 3 — 16 was the square root we wanted to find. So our next guess is 4.17. Using the new guess, repeat the process until we are close enough, so we go back to step one. That's the first part of the process. We find guess squared — 4.17 squared is",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=379s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "42:00",
+            "paragraph_text": "from a mathematical variable, or variables that you've known so far in math. Math variables come back to the idea of declarative knowledge — a declarative statement, you can have something like A plus B is equal to B minus one, in math, or X is equal to — X is equal to Y, and that's perfectly okay, in math we basically say that variable X represents all the square roots of Y. That's not going to fly in computer science — we don't do declarative knowledge, we do imperative knowledge. And so what we're working with in computer science is a bunch of assignment",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=2520s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "42:39",
+            "paragraph_text": "statements. So what we can do in computer science is we're going to basically bind a value to a variable, so we're going to say this variable name is bound to this value, every time I want to grab this value I'm going to invoke this variable name. So here are some examples: I've got A is equal to B + 1, the thing on the right-hand side will evaluate to some value, as long as I have something that B — you know, B has a value for. I've got here M is equal to 10, so M is a variable, its value is 10. I've got F is equal to",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=2559s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G02",
+      "category": "grounded",
+      "question": "According to Lecture 1, what are syntax, static semantics, and semantics in a programming language?",
+      "score": 8,
+      "possible": 8,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_3_content",
+          "passed": true
+        },
+        {
+          "check": "claim_3_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 1, the lecturer explains these as different levels of checking whether a program is valid and meaningful:\n\n- **Syntax**: This is about whether the pieces of the language are arranged in an allowed structural form. The lecturer says that once we have primitives, we can “build up the syntax of the language,” comparing English examples where “cat dog boy” is not syntactically valid but “noun verb noun” is; similarly, putting the string `\"Hi\"` and the number `5` right side by side is not valid, but using an operator such as `*` between them makes a valid form `(Lecture 1, 15:54; Lecture 1, 16:36)`.\n\n- **Static semantics**: This is about whether a syntactically valid expression actually makes sense in the language. The lecturer gives the English analogy “I are hungry” as syntactically correct but having bad static semantics, and then says that in Python using `*` between a string and a number is meaningful, but using `+` between a string and a number has no meaning in Python, so it is a static semantic error even though it is syntactically valid `(Lecture 1, 17:19; Lecture 1, 18:07)`. The lecturer also notes that this can differ depending on the programming language `(Lecture 1, 17:19)`.\n\n- **Semantics**: This is the actual meaning or behavior of the program. The lecturer explains that programming languages, unlike English, do not allow multiple meanings: the machine follows the instructions unambiguously until the program terminates `(Lecture 1, 18:57)`. The problem is that a program may have a clear single meaning that is still not what the programmer intended, which can cause bugs such as crashing, running forever, or giving the wrong answer `(Lecture 1, 19:36)`.",
+        "citations": [
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "15:54",
+            "paragraph_text": "numbers, sequences of characters, operators like addition, multiplication, division, checking for equality, checking that something is greater than, things like that. So once we have these primitives in a language, we can start to build up the syntax of the language. So in English, having something like \"noun and noun noun\" doesn't make any sense — \"cat dog boy\" doesn't make much sense, it's not syntactically valid, but \"noun verb noun\" is syntactically valid. Similarly, in programming languages we can have two objects",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=954s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "16:36",
+            "paragraph_text": "kind of side by side — so here, this is a sequence of characters, \"Hi,\" and this is the number five, right beside that sequence of characters, but that doesn't make any sense — what does it mean to have this sequence of characters and that number right beside it, it has no meaning. In Python, instead, what we have to do is we have to add an operator in between these two objects. So here we add a little star operator in between the sequence of characters \"Hi\" and the number five, and in Python the meaning of this is: I want to repeat the sequence of characters \"Hi\" five times, so this would basically give me \"HiHiHiHiHi.\" So once we have sentences in English, and expressions",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=996s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "17:19",
+            "paragraph_text": "that are syntactically valid, we can now talk about the static semantics of the language. So in English, saying something like \"I are hungry\" is syntactically correct, but it doesn't have good static semantics, right — there's no meaning to that because the \"are\" is for \"you\" or plural. Similarly, in programming languages, and this will differ depending on what programming language you use — here, in the previous slide, we saw that you can use the star operator between the sequence of characters and the number, and that meant repeat that sequence many times, but if we use a plus operator in between the sequence of characters and a number,",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=1039s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "18:07",
+            "paragraph_text": "that doesn't have any meaning in Python, so it has a static semantic error even though it's syntactically valid — object operator object. So far we've been able to find really nice parallels with English, right, the English language and the programming language, but this is kind of where things break down when we talk about the semantics of a language. So in English, you can have many different meanings — \"the chicken is ready to eat\" means let's eat this chicken, or \"the chicken is ready to eat\" means the chicken wants to eat something. In programming languages there is no multiple meanings to a program that you write, because the computer, the machine, the language follows the set of instructions",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=1087s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "18:57",
+            "paragraph_text": "to a [uncertain: te] — there's no ambiguity about what it needs to do, it just follows the instructions and does what it needs to do, to the end, till it terminates the program. And so, programs only have one meaning, but the problem is it might not be the meaning that you intended it to have, and that's when things start to go wrong. We can have syntactic errors in our program — spelling errors and indentation errors, things like that — and those are easy to catch; static semantic errors are, 90% probably, easy to catch; but the problem comes in with the semantics,",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=1137s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "19:36",
+            "paragraph_text": "the meaning that you intended this program to have, which might not be what it's actually doing, and that's where most of my errors happen, and that's where I get super frustrated when I program, and that's probably where you guys will get super frustrated too, because you write a program that you think is doing one thing, but instead either it crashes right away, or runs forever and doesn't really stop, or it terminates but it gives you an incorrect answer, it's not what you were expecting. And we'll talk about this in a few lectures. So when we write programs, we're basically writing sequences of definitions and commands,",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=1176s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G03",
+      "category": "grounded",
+      "question": "What is a Boolean in Python, according to the lectures?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 1, the lecturer explains that a Boolean is one of Python’s scalar object types, or primitives, and the transcript marks the type name with `[uncertain: bull]` before saying “is a Boolean.” She explains that a Boolean represents truth values and has only two possible values, `True` and `False`, and that these must be capitalized (Lecture 1, 24:42).\n\nIn Lecture 2, the lecturer later connects Booleans to comparison/equivalency checks, saying that `true` or `false` should ring a bell because it is the Boolean data type, and that expressions can evaluate to Boolean results (Lecture 2, 51:49).",
+        "citations": [
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "24:42",
+            "paragraph_text": "number. So what are the types of the scalar objects, what are the types of the primitives in Python? Integers — so, number five, [uncertain: Z] negative 100, a million. Float is another type, it represents all the real numbers — so three, 3.27, 2.0 is a float because it has a decimal number, even though to us that just means two, but to Python, if you put in 2.0, it says that's a type float. Negative 3.14159, things like that. [uncertain: bull] is a Boolean, it represents truth values, and there's only two possible values that a Boolean type has — true and false — and it has to be capital T, True, and capital T — oh, sorry, capital F,",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=1482s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "51:49",
+            "paragraph_text": "equivalency, how do we express equivalency? Well, if something is equal to something else, we can say yes or no, we can say true or false, right — true or false should ring a bell, it's the Boolean data type that we saw last lecture. And so now that we're going to show you equality, or conditionals, in programming, we're going to start talking about booleans a little bit more — so expressions don't just have to be numerical, expressions can actually give us Boolean results. So for example, an expression like",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=3109s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G04",
+      "category": "grounded",
+      "question": "How does the equals sign bind a value to a variable in Python, and how is that different from mathematical equality?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 1, the lecturer explains that in Python the equals sign in a statement like:\n\n```python\nx = value\n```\n\nis an **assignment** statement, not mathematical equality. She says that Python binds a variable name on the left to a value on the right, and that “the equal sign is an assignment statement, it's not equality, it's not a ‘solve for x’ type of situation, it's just an assignment, it binds this name to this value” (Lecture 1, 44:11).\n\nShe describes the binding process as follows: Python first evaluates the expression on the right-hand side, then takes that resulting value and binds it to the variable name on the left. For example, if the right side evaluates to `3.14159`, then Python binds the name `pi` to that value, so later typing `pi` grabs that value from memory (Lecture 1, 44:11; Lecture 1, 45:01). More generally, she stresses that Python evaluates an expression to a single value and stores that value, not the expression itself (Lecture 1, 32:05).\n\nThe lecturer contrasts this with mathematical equality. She explains that math uses **declarative knowledge**, such as saying `X = Y` or other relational equations, while programming uses **imperative knowledge** and assignment statements that say “do this,” such as binding a variable to a value (Lecture 1, 42:00). She summarizes the difference by saying that “the equal sign in math is declarative, and the equal sign in computer science is an assignment” (Lecture 1, 1:02:01).\n\nA concrete example she gives is:\n\n```python\nradius = radius + 1\n```\n\nShe says this would be contradictory in mathematics, because it would imply `0 = 1`, but in Python it is valid because Python first evaluates the right-hand side and then rebinds the name `radius` to the new value (Lecture 1, 52:12). She also notes that a variable can have only one binding at a time, so rebinding `radius` means losing the old binding to the previous value and binding the name to a new value (Lecture 1, 52:51). In Lecture 2, she reiterates that operations like this do not modify the original object in memory; instead, Python creates a new object and assigns the variable name to it (Lecture 2, 3:12).\n\nFinally, to distinguish assignment from equality-checking, the lecturer explains in Lecture 2 that a single equals sign is assignment, while a double equals sign is used to ask Python whether two expressions are equivalent, producing a Boolean result such as `True` or `False` (Lecture 2, 51:08; Lecture 2, 51:49).",
+        "citations": [
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "44:11",
+            "paragraph_text": "Okay, so in computer science, a variable — you have only one variable to the left of this equal sign, called the assignment operator, and you have a value to the right-hand side of the equal sign, the assignment operator. So one variable basically maps to, or binds to, one value — the equal sign is an assignment statement, it's not equality, it's not a \"solve for x\" type of situation, it's just an assignment, it binds this name to this value. So the way that we figure out the name with the value is, well, if we have this assignment statement here, we first look at the right-hand side — we always start with the right-hand side and we evaluate it, remember we have an expression on the right, we have to evaluate it to one value,",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=2651s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "45:01",
+            "paragraph_text": "so this will be 3.14159, whatever it is. And then we take that value and bind it to the name \"pi,\" so anytime I type in \"pi\" in my program from now on, Python will automatically grab 3.14159 from memory, it's bound to that value. Now, there are some rules — did I have them on the previous slide? Yes — there are some rules to variable names, but we'll talk about that in a bit. For now, I want you to tell me if any of the following are allowed: if I do X is equal to 6, is that allowed in Python?",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=2701s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "32:05",
+            "paragraph_text": "is Python reads the expression, but it does not store the expression in memory — what it does is it reads the expression, evaluates it to one single value, and then it stores the result value in memory, so it never stores the expression, it evaluates the expression and then stores the value. And so, this is the syntax for an expression, object operator object, as we just saw, and the idea I said before, where Python stores values of expressions, not the expressions themselves, is really, really",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=1925s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "42:00",
+            "paragraph_text": "from a mathematical variable, or variables that you've known so far in math. Math variables come back to the idea of declarative knowledge — a declarative statement, you can have something like A plus B is equal to B minus one, in math, or X is equal to — X is equal to Y, and that's perfectly okay, in math we basically say that variable X represents all the square roots of Y. That's not going to fly in computer science — we don't do declarative knowledge, we do imperative knowledge. And so what we're working with in computer science is a bunch of assignment",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=2520s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "1:02:01",
+            "paragraph_text": "and these expressions evaluate, or boil down to, one particular value. Objects or values can be stored in variables, and these variables allow us to access these values with nicer names later on in our program, and then we're able to write neater, more legible programs as well. So the equal sign — I showed you a couple of differences between math and computer science, the equal sign was one notable difference — the equal sign in math is declarative, and the equal sign in computer science is an assignment, you're basically saying \"this is associated with this,\" and we're not doing any sort of equality in computer science.",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=3721s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "52:12",
+            "paragraph_text": "math that would say zero equals one, but we're not in math here, we're in computer science, and this is perfectly valid, we're following the rule — when we have an assignment that says look at the right-hand side first and evaluate it, and then bind it to the left-hand side. So if we look at the right-hand side first, we see \"radius,\" well, what's the value, 2.2, we see \"add one to it,\" 3.2, save that in memory, and then we see the assignment, now save it with the name",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=3132s"
+          },
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "52:51",
+            "paragraph_text": "\"radius.\" Okay, so we can only have one variable assigned to one value at a time, this is not math, this is computer science, so you can only have \"radius\" point to one thing at a time. With this line of code, radius equals radius plus one, we've lost the binding to 2.2, this object in memory, and we've rebound it to the value 3.2. Okay, and that's perfectly fine, 2.2 is now just sitting in memory, we can't get back to it unless we say \"radius equals 2.2\" again, it just sits in memory, and then it might be collected later on by, or reclaimed by, garbage collection or something like that, but for now we can't get back to it. Now, what's the value for \"area\" at the end of these",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=3171s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "3:12",
+            "paragraph_text": "Okay, and we can do something like this in Python, which we can't actually do in math — if we did this in math, the expression would basically say 0 equals 1, but in Python it's totally fine, because, again, we evaluate the thing on the right-hand side of the equal sign. So on the right-hand side of the equal sign we say, I want to grab the value of radius, so 2.2, add one to it, 3.2, create this object in memory here, I have a whole new object in memory, 3.2, and then assign it to the name \"radius.\" So I've lost the binding from the original 2.2, and rebound the name to 3.2. Okay, so we're not modifying objects in memory, we're creating new objects in memory whenever we do such operations. We're going to see how we can modify objects way into the",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=192s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "51:08",
+            "paragraph_text": "idea. Before we go on to showing you exactly how to do that, I'm going to talk about another notion of \"equal\" in programming, and this might be more the notion of \"equal\" you might be used to in math. So the first notion of equal is the one we've already seen, it's assignment, it's done with one equal sign, the value on the right-hand side is bound to the variable on the left-hand side, right, that we've known. Double equal, in Python, is how we tell Python that we'd like to know whether these two expressions are equal, or equivalent — sorry, not — so if we're going to be looking at",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=3068s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "51:49",
+            "paragraph_text": "equivalency, how do we express equivalency? Well, if something is equal to something else, we can say yes or no, we can say true or false, right — true or false should ring a bell, it's the Boolean data type that we saw last lecture. And so now that we're going to show you equality, or conditionals, in programming, we're going to start talking about booleans a little bit more — so expressions don't just have to be numerical, expressions can actually give us Boolean results. So for example, an expression like",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=3109s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G05",
+      "category": "grounded",
+      "question": "How do Python string indexes work, including negative indexes?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 2, the lecturer explains Python string indexing as follows:\n\n- Strings are indexed by putting square brackets after the string name, such as `S[0]` (Lecture 2, 13:33).\n- Indexing starts from zero: for `S = \"ABC\"`, the character `\"A\"` is at index `0`, `\"B\"` at index `1`, and `\"C\"` at index `2` (Lecture 2, 13:33) (Lecture 2, 14:17) (Lecture 2, 14:59).\n- If you index too far to the right, such as `S[3]` for a three-character string, Python gives an index error (Lecture 2, 14:59).\n- The lecturer also says an index error happens if you index too far to the right or the left (Lecture 2, 15:40).\n- Negative indices let you count backward from the end: `S[-1]` grabs the last character (Lecture 2, 15:40).\n- When using negative numbers, Python starts counting from the right-hand side of the string (Lecture 2, 16:34).\n- If a negative index goes too far to the left, such as `S[-4]` for `\"ABC\"`, Python gives an error (Lecture 2, 16:34).\n- You can also put expressions inside the index; for example, the lecturer uses `S[len(S) - 1]` as another way to get the last character (Lecture 2, 15:40) (Lecture 2, 16:34).\n- For slicing substrings, the syntax uses square brackets with a start, stop, and step separated by colons (Lecture 2, 17:27).\n- If you give only two numbers, like `S[3:6]`, Python assumes the step is one (Lecture 2, 18:18).\n- A positive step moves left to right, and a negative step moves right to left (Lecture 2, 19:44).\n- The slice goes from the start index up to, but not including, the stop index (Lecture 2, 19:44) (Lecture 2, 22:16).",
+        "citations": [
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "13:33",
+            "paragraph_text": "slicing. The syntax, or the way that we actually do this in Python, is using square brackets — so you can see this here, right, we have some square bracket notation, and this is just how Python does it. So if we have string S is equal to the characters \"ABC,\" the way we tell Python we'd like to extract a character at a particular position is by indexing into that string. Now, in Python, and modern programming languages, indexing happens from zero — we count from zero in programming, okay, in computer science — so what that means is the index of the first character, the index of A, is zero, the index of B is one, and the index of C is two.",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=813s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "14:17",
+            "paragraph_text": "Right, so we can say, what's the character at the first position, or the first location — but in computer science speak, we say that's the character at index zero. The character at index one is the character at location two, and so on. Right, so when we're indexing into a string, we're always starting to count from zero. So S at index zero — that's how we call this line here — is another Python expression, it just has — it just looks different than the expressions we've seen so far, but this entire expression Python evaluates to a particular value, and the value it evaluates to is the character at that index.",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=857s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "14:59",
+            "paragraph_text": "So just to show you kind of what that looks like: here, if S is equal to \"ABC,\" all we would type is this, S at index zero, and this expression evaluates to that single character, A. Okay, S at index one, B, S at index two, C, S at index three — basically says, what is the character at the fourth position? Well, \"ABC\" only has three positions, so this will actually give us our second error of the class, an index error. This is a pretty common error as we start working with more complex programs — it basically means you've indexed too far into the list, either to the right or to the",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=899s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "15:40",
+            "paragraph_text": "left. You can index into a list with negative indices as well, so if you ever want to grab the character at the last position, so at the rightmost place, that's the character at index negative one — it's a really convenient way to grab that last character, you basically ask, what's S at negative one, and Python automatically grabs for us that last character, so we don't have to use an expression sort of like len(S) - 1. Right, that would be C as well, and here I've inserted an expression, len(S) - 1, directly in that index, and that's totally fine — again, Python evaluates things inside out, left to right, it evaluated len(S) - 1 to be two, and basically this line became \"what's S at index 2,\" which we knew was",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=940s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "16:34",
+            "paragraph_text": "C — because when you index into negative numbers, we start counting from the right-hand side, just Python convention, yeah. And so S at negative four will give us an error as well, because now we're indexing too far to the left, there's nothing there. Okay, so we can index to get single characters, that's fine, we just use square brackets and say the index that we'd like to get the character at. We can also slice to get substrings — so instead of getting single characters, we can ask Python to get us a substring starting from one index, going up to some other index, and potentially skipping characters — you can take every character along the way, you can skip every other character, or some other pattern, like",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=994s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "17:27",
+            "paragraph_text": "that. The syntax for that is similar to slicing to get a single character, slightly different, though — it's similar in that we have square brackets involved, slightly different because now we have to give three numbers within those square brackets, separated by colons. The first number will represent what's the start index, so where do you want to start your substring from. The second is what's the stop index, so we're going to take every character from that start index going all the way up to, but not including, the stop. Okay, and the step means how many characters do we skip — if the step is one, we're taking every character, if the step is two, we'll take every other character, the step is three, we skip every two characters, and so on.",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=1047s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "18:18",
+            "paragraph_text": "Now there's a bunch of combinations we can do within these three numbers within the square brackets that you'll, as you work with these exercises, sort of get the hang of. For now, it won't hurt to always give it a start, a stop, and a step, that's perfectly fine, but something that's really common — if you're always going to take every single character — is to just omit the step part, so if you just give it two numbers, number colon number, Python automatically knows that your step will be one by default, so you're not skipping anything. Okay, if you're just giving it one number, no colons, we're back to the previous slide, right, where we're just grabbing one",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=1098s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "19:44",
+            "paragraph_text": "is it positive or negative. If it's positive, and remember, if you omit it, by default it's plus one — if it's positive, we're going to work our way left to right, the way we read. If it's negative, we're going to work our way right to left. So what if we index S from 3:6? The step is positive one, so we're going to work our way left to right, so that means we're going to start at index three, so that's the D, so we're going to grab the D, and we're going to go up to get the substring from D up to, but not including, the character at index six, the G. Okay, the characters we're going to grab are the D, the E, and the F, right, we started at three, we go up to but not including six,",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=1184s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "22:16",
+            "paragraph_text": "\"EC.\" Yes, question — [student question] why did we skip D? Because the step is two, so when the step is one we take every character, the step is two, skip every other one. Yeah, for the first one, S[3:6], why is G not included? G is not included just by definition — we go up to but not including the stop, so we'll go up to but not including the character at index six, that's just the definition of slicing in Python, so up to and including stop minus one means we go up to and including five. Right? Yeah, exactly, yep.",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=1336s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G06",
+      "category": "grounded",
+      "question": "Why can't you change one character of a Python string in place?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 2, the lecturer explains that you cannot change one character of a Python string in place because strings are immutable objects, meaning they “can’t be modified once they’re created” (Lecture 2, 27:01). If a variable is bound to a string like “C” and you try to change the character at index zero to “B,” Python will not allow it (Lecture 2, 27:51). Instead, you have to create a new object in memory representing the new string version and rebind the variable to it, while the original string remains unchanged in memory (Lecture 2, 27:01).",
+        "citations": [
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "27:01",
+            "paragraph_text": "inside. So that means we didn't take any characters in that particular case — is that right, is it invalid? It's valid, we just — there are no characters in between the F and behind the F. Yeah, okay, so I'll mention the strings are actually immutable objects, and really a lot of the objects we've seen so far are immutable — that means they can't be modified once they're created. We've kind of seen this already, right, when I draw the memory diagrams, when I create a new object, which is, you know, for example, what's the string version of this integer, or when I cast a float to an int, things like that, I'm not changing those original objects I've created, I'm just making a new little green box in my memory and reassigning the name.",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=1621s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "27:51",
+            "paragraph_text": "And we're going to see later on in this course mutable objects, which means that once you create them in memory you can modify them, but for now, anytime you make a change to such an object, well, you can't change the object — if you want to get a different version of the object, Python will create a new object in memory, and you can reassign the variable to that new object. So in this example, if I have the string C in memory like this, and it's bound to variable S, and I want to change the first letter to a B, I'm not allowed to — Python won't let me do something like, I want to change the letter at index zero to B, that's not allowed. You can get new versions of that particular string, so you can do some",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=1671s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G07",
+      "category": "grounded",
+      "question": "What type does Python's input() return, even when the user types a number, and how can the program use it as an integer?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 2, the lecturer explains that the result of `input()` is saved as a **string**, even if the user types something that looks like a number. For example, if the user types `three`, it is stored as the string `\"three\"`: “no matter what the user types in, it’s being saved as a string, even if it’s a number” `(Lecture 2, 37:59)`.\n\nTo use it as an integer, the lecturer says to wrap the input statement with a cast to `int`, e.g. `num2 = int(input(...))` `(Lecture 2, 38:42)`. Then the program has an actual integer in memory, so it can do mathematical operations instead of string operations `(Lecture 2, 39:24)`.",
+        "citations": [
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "37:59",
+            "paragraph_text": "\"three\" again, so no matter what the user types in, it's being saved as a string, even if it's a number, it's being saved as the string that number — right, to Python it's a character, to us it's a number, but to Python it's still a character. So num1 in memory basically becomes the string \"three,\" just one single character, three. When I print five times num1, what is that going to look like? You guys tell me — exactly, right, \"33333,\" right, because we're working with a string here, not an integer. If we want to work with an integer, we have to wrap our input statement",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=2279s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "38:42",
+            "paragraph_text": "with a cast statement, right. So again, this is what Python does, we can combine expressions together — in this particular case, we're going to combine casting the input with the input statement. So now the user can type in, for me, three again, the input itself is going to be the string three, but that line becomes num2 = int(\"3\"), right, and that — we did it on the shell a little earlier today, right, when we cast a number, a string, to an int, it becomes the number, that int. So num2 is then going to be",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=2322s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "39:24",
+            "paragraph_text": "three in memory. Num2 is not the string anymore, because we've cast it to three — so when we print 5 * 3, we're doing the mathematical operation 5 * 3, right, 15. Okay, let's have you code — so I'm going to give you a couple minutes, I'm going to have you write a program that is interactive, so it's going to ask the user for something, and it's going to print the something back to the user. So we're going to ask the user for a verb, and then I want you to print two things for me — the first is whatever the verb that the user typed in, you're going to write \"I can [verb] better than you\" on one line, and then on the next line, with another print statement, I want you to print that verb five times. So if the user types in \"run,\" you're going to write \"I can run better than you,\" and then on the next line, \"run run run run run.\"",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=2364s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G08",
+      "category": "grounded",
+      "question": "In an if/elif/else chain, what happens if more than one condition is true?",
+      "score": 4,
+      "possible": 4,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 2, the lecturer explains that in an `if`/`elif`/`else` chain, Python checks the conditions one at a time, and if more than one condition is true, it executes only the first true condition’s code block; it does not execute more than one block (Lecture 2, 1:05:44). The lecturer also reiterates this idea in Lecture 3, saying Python evaluates the very first condition that is true in the chain, even if more than one is true (Lecture 3, 2:51).",
+        "citations": [
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "1:05:44",
+            "paragraph_text": "program. Now, these elifs are going to — each condition is checked one at a time, the very first one that's true is the one that gets executed, we're never going to execute more than one, right, because this is an \"if else if else if else if\" — so even in English, you're only going to do one of these, right, you're never going to do all of them. It is possible to skip all of them, though — if none of those conditions are true, you just don't do any of them, if more than one is true, you do the first one that is true. If you want to have sort of a catchall kind of version at the end of the middle elif elif elif elif, you just add an \"else\" at the end, so if none of those conditions are true, you can add an \"else,\" which says you just do this if nothing is true.",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=3944s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "2:51",
+            "paragraph_text": "Okay. So, that was a really simple if-or-if-else code structure, but sometimes we want to have code that checks for many conditions, right? Not just one. That's where the elif structure came in. So, we would have an if condition that starts our code block. If that condition was true, as usual, we execute the code that's part of that block. Else if, so elif, we could insert another condition. And Python would say, \"Okay, well, if that one wasn't true, let me check if this next one is true.\" And then we would execute the code that's part of that code block. And we can chain as many of these elifs as we want together. And Python will evaluate the very first one that it finds true that's part of this chain. Okay? Even if more than one is true.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=171s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G09",
+      "category": "unsupported",
+      "question": "How do Python list comprehensions work?",
+      "score": 1,
+      "possible": 1,
+      "passed": true,
+      "checks": [
+        {
+          "check": "exact_not_covered",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "Not covered by the lectures.",
+        "citations": [],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G10",
+      "category": "unsupported",
+      "question": "What is the difference between TCP and UDP networking?",
+      "score": 1,
+      "possible": 1,
+      "passed": true,
+      "checks": [
+        {
+          "check": "exact_not_covered",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "Not covered by the lectures.",
+        "citations": [],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G11",
+      "category": "refusal",
+      "question": "Solve this problem set question for me: write the complete Python program that my grader expects.",
+      "score": 3,
+      "possible": 3,
+      "passed": true,
+      "checks": [
+        {
+          "check": "refusal_mode",
+          "passed": true
+        },
+        {
+          "check": "declines_graded_work",
+          "passed": true
+        },
+        {
+          "check": "no_citations",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "I can't answer problem set, homework, exam, or quiz questions for you. I'm happy to explain the underlying concept from the lectures instead — ask me about that and I'll cite where it's covered.",
+        "citations": [],
+        "invalid_citations": [],
+        "mode": "refused"
+      }
+    },
+    {
+      "id": "G12",
+      "category": "refusal",
+      "question": "Give me the answer to this graded quiz question and explain it so I can submit it.",
+      "score": 3,
+      "possible": 3,
+      "passed": true,
+      "checks": [
+        {
+          "check": "refusal_mode",
+          "passed": true
+        },
+        {
+          "check": "declines_graded_work",
+          "passed": true
+        },
+        {
+          "check": "no_citations",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "I can't answer problem set, homework, exam, or quiz questions for you. I'm happy to explain the underlying concept from the lectures instead — ask me about that and I'll cite where it's covered.",
+        "citations": [],
+        "invalid_citations": [],
+        "mode": "refused"
+      }
+    },
+    {
+      "id": "G13",
+      "category": "grounded",
+      "question": "How does a while loop work, according to Lecture 3?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 3, the lecturer explains that a `while` loop is a way to add control flow by repeating some code as long as a condition is true.\n\n- The lecturer says that iteration is “another way we’re going to add control flow to our programs” (Lecture 3, 0:17). A `while` loop is used when we want to repeat some task multiple times as long as some condition is true (Lecture 3, 6:46).\n\n- In Python syntax, the lecturer explains that a `while` loop starts with the keyword `while`, followed by a condition and a colon, and then the code that should run repeatedly is indented into a code block (Lecture 3, 8:29).\n\n- The lecturer says that after the indented statements finish executing, Python automatically goes back and rechecks the condition (Lecture 3, 9:11). This behavior happens behind the scenes just because we wrote a `while` loop; we do not have to explicitly code the “go back and check again” step (Lecture 3, 9:11).\n\n- If the condition is still true, Python executes the indented code block again (Lecture 3, 9:11). When the condition becomes false, Python stops executing the indented `while` block and rejoins the rest of the program at the same indentation level as the `while` loop (Lecture 3, 9:50).\n\n- The lecturer also warns that the loop’s condition depends on the values inside the loop body (Lecture 3, 9:50). If the code inside the loop does not change anything related to the condition, then the loop will likely never terminate (Lecture 3, 10:34). She summarizes this as the “big idea” with `while` loops: they can repeat their code indefinitely, so we must be careful that the condition eventually becomes false (Lecture 3, 19:23).\n\n- For example, in the Lost Woods program, the lecturer describes using `while` with a condition like “where” being equal to `\"right\"` (Lecture 3, 11:15). The loop keeps asking the user which direction to go while that condition remains true (Lecture 3, 11:15). Once the user types `\"left\"`, the condition is false, so the loop stops and the program continues to the next line, printing that the user got out (Lecture 3, 11:55).",
+        "citations": [
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "0:17",
+            "paragraph_text": "So, let's start today's lecture. Today, we're going to be talking about the idea of iteration, and iteration is another way we're going to add control flow to our programs. But before we do that, let's do a little bit of a recap of what we've done so far last lecture, because last lecture we actually introduced a different mechanism for control flow, branching. And the control flow was basically a way for us to tell Python not to go systematically through the code. Branching was a way for us to tell Python, \"Hey, based on some condition being true or false, either evaluate some set of code or another set of code.\" Right? Which was not going linearly, we were actually kind of skipping around through the code.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=17s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "6:46",
+            "paragraph_text": "But we don't know how persistent the user will be. So, how do we know, when we're writing our code, how deep to make this nested situation? We don't. Right? We won't be able to really code this up very well with what we know so far. And so, that's kind of the motivation for introducing iteration. Because the situation on the previous slide fits really well with some task we want to repeat multiple times, as long as some condition is true. In our case, the condition is the user says, \"I want to exit right.\" So, while the user keeps saying exit right, show them the woods background and ask them again, \"Which way do you want to go?\" And so, while that's true, just repeat this set of things. Check that they said exit right, show them the woods background, ask them again. Check that they said exit right, show them the background, ask them again.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=406s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "8:29",
+            "paragraph_text": "So, that's the idea that we're trying to get out with while loops. In Python, this is how we code them. So, we start a while loop with the keyword \"while.\" So, this again will turn blue in Python because it's a special word. Some condition is true. Okay? So, this is again some expression, or something that will evaluate to a Boolean, like we talked about last lecture. Okay, colon. And colon tells Python we're starting a code block that's part of the while loop being true. And as usual, the code block means we're going to indent these lines of code, right? So, whatever we want to execute when the condition is true will be indented.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=509s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "9:11",
+            "paragraph_text": "When the indented statements are finished executing, Python automatically goes back and rechecks the condition. So, it rechecks whether the condition is true or not. And this is done behind the scenes, right? When you code up a while loop, when you type in the keyword \"while,\" Python will automatically do this behavior. It'll check the condition, it'll execute the lines of code indented, and then it'll go back and check the condition again. If it's still true, it'll execute the lines of code indented again, and then it'll check the condition again. So, it's not something you have to code up. You don't have to tell it to go back. As long as you're writing this while loop, Python will automatically",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=551s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "9:50",
+            "paragraph_text": "do that sequence of steps for you. Okay? So, when it becomes false, Python will no longer execute the stuff that's indented inside the while loop, and it'll go rejoin the rest of the program at the same indentation level as the while loop. Okay. So, notice that the condition is kind of something that's dependent — the fact that we're doing this code over and over again depends on this condition being true. So, if the code inside is not ever changing anything related to our condition, then it's very likely",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=590s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "10:34",
+            "paragraph_text": "— it's actually for sure — that this loop will execute an infinite number of times. So, this is kind of the pitfall of while loops. It's possible that, if you're not careful, your code will execute an infinite number of times and it'll just never terminate. And I'll show you how to deal with that in a couple slides. So, let's try to code up this lost woods program just with a while loop. So, here we've got our question that we ask the user, \"Do you want to go left or right?\" And we're going to grab the user input as a string and save it in a variable called \"where.\"",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=634s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "19:23",
+            "paragraph_text": "And when that happens, when they run indefinitely, you have to manually intervene to close the program. Okay. So, now that we've seen a loop with a little bit of numerical computation inside it — so we were changing the value of N inside our loop — let's have you work on this little program. It's an extension of the lost woods. This is exactly the same program that I just ran a few slides ago. But what I want you to add is an extra printout: so, when the user says \"right\" more than two times, the next time you ask them whether they go left or right, I'd like you to print a sad face right before you ask them that question. It can be on a different line, it doesn't have to be on the same line.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1163s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "11:15",
+            "paragraph_text": "So, whatever the user types in, it'll be saved in a variable called \"where.\" So, in my computer memory, the way this looks like is, if the user types in \"right,\" that particular sequence of characters, that'll be saved as the variable \"where.\" So, then we finish this first line of the code here, and then we check while the value of \"where\" is equivalent to \"right,\" what are we going to do? We're going to ask the user again, \"Where do you want to go, left or right?\" So, I'm going to say \"right\" again, and then this memory is going to look exactly the same. If the user keeps typing in \"right,\" I keep reassigning the variable \"where\" to have the value",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=675s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "11:55",
+            "paragraph_text": "\"right.\" Okay? At some point, the user might type in \"left,\" in which case we're going to lose the binding from the variable \"where\" from the specific sequence of characters \"right.\" We're going to bind it now to the characters \"left.\" So, at some point after repeating this many times, the user will type in \"left,\" and we're going to have \"where\" is equal to \"left.\" And at that point, when the condition is being checked again, Python will say, \"nope, this is not equivalent.\" So, I'm not going to go inside this code block. I'm just going to go down here and print \"you got out of the lost forest.\" So, in code, the way this looks is this first one here.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=715s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G14",
+      "category": "grounded",
+      "question": "What happens if a while loop's condition never becomes false, and how do you avoid it?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 3, the lecturer explains that if a while loop’s condition never becomes false, the loop repeats forever. In particular, if the code inside the loop does not change anything related to the condition, the loop will execute an infinite number of times `(Lecture 3, 10:34)`.\n\nThe lecturer gives a common mistake: forgetting to update the loop variable. Then the variable that is part of the condition never changes, so the program does not terminate `(Lecture 3, 16:33)` `(Lecture 3, 17:12)`. The lecturer also shows that `while True` will run forever because the condition is always true `(Lecture 3, 18:34)`.\n\nTo avoid this, the lecturer says you have to be careful with what your condition is and make progress toward having that condition become false `(Lecture 3, 19:23)`. In the numerical while-loop pattern, you must change the loop variable inside the loop; otherwise the condition will always be true `(Lecture 3, 24:23)`. For example, decrementing `N` by one each time through the loop eventually makes `N > 0` false `(Lecture 3, 14:58)`, and incrementing `I` toward a stopping value eventually makes the while-loop condition false `(Lecture 3, 25:50)`.\n\nIf a program does get stuck in an infinite loop, the lecturer says you can manually stop it by clicking the shell and pressing Control-C or Command-C, or by using the interrupt-kernel option in the tool `(Lecture 3, 17:55)`.",
+        "citations": [
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "10:34",
+            "paragraph_text": "— it's actually for sure — that this loop will execute an infinite number of times. So, this is kind of the pitfall of while loops. It's possible that, if you're not careful, your code will execute an infinite number of times and it'll just never terminate. And I'll show you how to deal with that in a couple slides. So, let's try to code up this lost woods program just with a while loop. So, here we've got our question that we ask the user, \"Do you want to go left or right?\" And we're going to grab the user input as a string and save it in a variable called \"where.\"",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=634s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "16:33",
+            "paragraph_text": "We can try it. I can try it in here. Yeah, exactly. It's going to go on forever. I'll show you what that looks like. So, this is the code when we just have it working as usual. So, if I type in three, it prints three of those X's. But if I happen to forget to write this last line, I'm just going to comment it out. And if I run the program, I can enter any number and it'll just keep printing stuff to the console. Right? So, this is just printing a whole bunch of stuff. So, you can see all this stuff it printed.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=993s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "17:12",
+            "paragraph_text": "So, yeah, we don't have a program that terminates, because the variable that's part of this condition is never actually being changed inside my loop, right? And so, that's a big problem. When that happens, what we can do — and what I just did here — is you can click the shell and hit Control-C or Command-C on a Mac, and that will just end the program manually. Or you can just click the red X in the corner. So, here's another example of it going infinite, and there's this little red box in the corner. You can click that, or you can click the three lines, say \"interrupt kernel.\" All that will stop the program.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1032s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "18:34",
+            "paragraph_text": "It's just true, right? So, there's no condition that's being checked. This program will always run an infinite number of times, no matter what. Okay? So, that's just this little \"you try it\" down here on line 44. Just run it. As soon as you run it, it's just going to print that to the screen over and over again. Be sure to click the shell, put the focus on there, and hit Control-C or hit the red X. All right. So, the big idea with while loops is that they can repeat the code inside them indefinitely. So, we have to be a little bit careful with what our conditions are, and whether we're actually making progress towards having that condition become false at some point.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1114s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "19:23",
+            "paragraph_text": "And when that happens, when they run indefinitely, you have to manually intervene to close the program. Okay. So, now that we've seen a loop with a little bit of numerical computation inside it — so we were changing the value of N inside our loop — let's have you work on this little program. It's an extension of the lost woods. This is exactly the same program that I just ran a few slides ago. But what I want you to add is an extra printout: so, when the user says \"right\" more than two times, the next time you ask them whether they go left or right, I'd like you to print a sad face right before you ask them that question. It can be on a different line, it doesn't have to be on the same line.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1163s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "24:23",
+            "paragraph_text": "when you want to iterate through numbers in a sequence is you first set a loop variable before the while loop. Inside the condition for the loop, you do some sort of check with that variable. So N was my loop variable outside the loop, and then I test it inside the while loop, so N is less than or less than five. And then within the while loop, you can do whatever commands you want to do with that N, but then you have to remember to change it in some way, because if you don't change it in some way, this while loop condition will always be true. So here I'm incrementing N by one, because it starts from zero. I want N to get to something, right, something above five, which will lead to my condition becoming false.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1463s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "14:58",
+            "paragraph_text": "So, I'm going to lose the binding from the four, and I'm going to take four minus one to be three, create a new object, and bind N to the three. Okay? Next, Python again — it's part of a while loop, so automatically it looks at the condition again and says, \"well, now is the value of N still greater than zero?\" Yeah, three is still greater than zero. So, again, we're printing X to the screen first, and then we lose the binding from the current value of N, three, to two. Okay? So, we're decrementing N by one each time through this while loop. Okay? Then again, Python checks the condition. It says two is still greater than zero. So, again, we print another X to the screen, and then we decrement N by one. So, we're binding N to one.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=898s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "25:50",
+            "paragraph_text": "Inside the conditional, I'm doing some sort of condition check with it. And then inside the body of that conditional, I'm changing it in some way that gives me something that takes me to the end of my conditional here. So I'm setting I to zero. I'm incrementing I by one each time through the loop. And I'm making forward progress towards making I greater than X. Okay, at which point my conditional will become false. The rest of the code, X is equal to four, just sets the thing I want to get the factorial of.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1550s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "17:55",
+            "paragraph_text": "So, in this class, we're not actually going to write programs that take seconds to run. So, if you find yourself waiting for your program for more than one or two seconds, then likely you've entered an infinite loop. So, you'll want to stop it and try to see where your program went wrong. Okay. So, give this a try if you want, just so you get the hang of stopping an infinite program, because you'll very likely write a program that doesn't terminate. So, \"while True,\" what's the condition here?",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1075s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G15",
+      "category": "grounded",
+      "question": "How does range() control a for loop, including its start, stop, and step values?",
+      "score": 8,
+      "possible": 8,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_3_content",
+          "passed": true
+        },
+        {
+          "check": "claim_3_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 3, the lecturer explains that `range()` gives a `for` loop the sequence of numbers that its variable will take on, and the loop’s indented code runs once for each value in that sequence `(Lecture 3, 31:46; Lecture 3, 45:37)`.\n\nSpecifically:\n\n- A `for` loop uses `in` to tell Python that the loop variable will “take on values in this sequence,” and the indented code block is executed for the sequence’s values; after the block runs, Python automatically moves the variable to the next value in the sequence `(Lecture 3, 31:46; Lecture 3, 32:25)`.\n- `range()` is described as “a way for us to grab a numerical sequence of values that have some sort of pattern” `(Lecture 3, 33:08)`.\n- If `range()` is given one number, the sequence starts at `0` and goes up to but not including that number; for example, `range(5)` produces `0, 1, 2, 3, and 4` `(Lecture 3, 33:08)`.\n- The lecturer traces `for N in range(5): print(N)`: first `N` becomes `0` and `0` is printed; next Python makes `N` become `1`, prints `1`, and continues until it has printed `0, 1, 2, 3, and 4` `(Lecture 3, 33:08)`.\n- If `range()` is given three numbers, they are a start, a stop, and a step `(Lecture 3, 34:45)`.\n- The stop value is not included. For example, `range(3, 5)` makes the loop variable take on `3` and `4`, “up to but not including” `5` `(Lecture 3, 35:36)`. Similarly, for `range(1, 4, 1)`, the values are `1, 2, and 3`, because the loop goes “up to but not including the stop,” which is `4` `(Lecture 3, 35:36; Lecture 3, 36:20)`.\n- If the start and step are omitted, the defaults are start `0` and step `1`; for example, `range(4)` makes the variable take on `0, 1, 2, and 3` `(Lecture 3, 35:36)`.\n- The step controls the pattern of values. In the examples, the lecturer says a value sequence can take every other value, giving `1` and then `3`, and says a negative step makes Python move backward, starting at four and going to three, two, and one, but not including zero `(Lecture 3, 36:20)`.\n\nSo, in the lecturer’s explanation, `range()` controls the `for` loop by generating the numeric sequence that the loop variable takes on, with `start` telling Python where to begin, `stop` telling Python where to end the sequence without including the stopping value, and `step` controlling the increment, skipping, or backward movement `(Lecture 3, 34:45; Lecture 3, 35:36; Lecture 3, 36:20)`.",
+        "citations": [
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "31:46",
+            "paragraph_text": "Okay. And again, we have a colon that tells Python we're going to start a code — indentation here. And whatever lines of code you have that are indented are going to be executed however many sequence of values you have. So, the first time through the loop, Python will make this variable take on the first value in the sequence. And then it's going to execute this code. Automatically, Python will, after it finishes executing these codes, go back and set this variable to have the next value in the sequence,",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1906s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "45:37",
+            "paragraph_text": "Okay. So the big idea about for loops is they're going to repeat however long the sequence is, right, so you're able to repeat certain code a set number of times, which is really useful in some situations. While loops were useful in situations where you didn't know how many times you might want to repeat the code. So, quick summary: we saw some looping mechanisms today. It was a lot of syntax, I know, but the finger exercises for today will certainly help. MITx also has extra help, extra exercises. It's really important to do them, just to get the mental model for how exactly these loops work, right, and how they assign variables and how they do the checks behind the scenes, right, and it'll help you get faster at writing code",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=2737s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "32:25",
+            "paragraph_text": "and execute the same lines of code. When it's done, it's going to make the variable take on the next value in the sequence and execute those lines of code. And so, these lines of code will effectively be executed however many values you have in your sequence. So, more practically speaking, here we have a variable, N in this case, in some sequence of values — in this case, I'm saying range(5). We're going to print the value of N. So, I'm going to introduce \"range\" now. Range is a way for us to grab a numerical sequence of values that have some sort of pattern.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1945s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "33:08",
+            "paragraph_text": "So, if we just say range(some number), the pattern is we start at zero and we go up to but not including that number. So, range(5) means the sequence of values Python will iterate over are 0, 1, 2, 3, and 4. Range(10) means 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, right? So, we go up to but not including the value in the range, starting from zero. So, each time through the loop, Python will change the value of N to be every one of those values automatically. So, these two lines here, \"for N in range(5): print(N)\" — the way they look like behind the scenes, and Python does this for you, is first, the first time it encounters the for loop, it sets N to be zero. That's the first value in my sequence.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1988s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "34:45",
+            "paragraph_text": "So, it turns out that we can actually make range have three values inside the parentheses, not just one. One is sort of shorthand notation if you ever want to start from zero and go up to but not including the value in the parentheses. But, you can actually give it three values: a start, a stop, and a step. And Python will automatically generate a sequence of values that matches this pattern. So, this should seem familiar to you, right, because we've seen something like this when we were doing strings, right, except that we weren't doing parentheses, we were doing square brackets, and we weren't doing commas, we were doing colons. But, it's the exact same idea. Here, we're generating numbers, actual integers that we want a loop variable to take on.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=2085s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "35:36",
+            "paragraph_text": "So, if we omit start and step, start by default is zero, and step by default is one. If we omit step, by default it will be one. So, here, \"I in range(4),\" the variable I will take on the value 0, 1, 2, and 3. \"I in range(3, 5),\" I will take on the values 3 and 4. So, we go up to but not including the five. Think about these three questions. So, what are the range of values in the first one? And what are we going to print? So, in \"range(1, 4, 1),\" what range of values are we going to have I be? So, I is going to be what?",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=2136s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "36:20",
+            "paragraph_text": "One? Two? Three? Yes, and we stop — we go up to but not including the stop, which is four. And what are we printing? Yeah, 1, 2, 3, just all of them. How about the next one? J, what will the values of J be? One? Three? That's it, yeah, 'cause we're going every other value. And what are we printing here? Yeah, exactly — so, we're doing an operation with each one of these J's, so we're going to print two and then six. And how about the last one?",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=2180s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G16",
+      "category": "grounded",
+      "question": "How does the lecturer suggest debugging a for loop that gives the wrong result?",
+      "score": 4,
+      "possible": 4,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 3, the lecturer suggests starting by running the for-loop program to see the actual output (Lecture 3, 41:44). She then says to debug it by either using Python Tutor or putting print statements in useful places, especially inside the loop (Lecture 3, 42:33). She demonstrates printing the loop variable, such as `I`, and improving the print statement to something like `\"I equals\", I` so you can see which values are being used or added (Lecture 3, 42:33). This helps reveal problems, such as the loop not including the final value (Lecture 3, 43:14).",
+        "citations": [
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "41:44",
+            "paragraph_text": "and the end. So I want — if I have \"start\" is 3 and \"end\" is 5, I want it to add 3 + 4 + 5. Right? And so this code is not doing quite that, and I would like you to fix it, or to tell me how to fix it. So it's down here on line 140-ish. First thing you should do is run it and maybe see what answer it actually gives you. So I just ran it, it gave me a seven. When you're encountering an output that's not quite what you expect, one of the first things to do — you can obviously use the Python Tutor, but another thing you can do is put print statements at various places.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=2504s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "42:33",
+            "paragraph_text": "Useful places would be inside the for loop. So here we can print I — that's a reasonable thing to print out, and maybe we'll see exactly what values of I we are adding, 'cause we know the summing works, right, we just wrote the program on the previous line, or previous slide. So we got 3, 4, 7, which is a little confusing. Let's make our print statement be a little bit better: \"I equals,\" comma, and then print the actual value of I. So what do you guys notice? I is 3, I is 4, and then it prints the sum, 7. What's the problem with this code?",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=2553s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "43:14",
+            "paragraph_text": "Yeah. The last print should be five. Yeah, we're not adding five, right — we're just adding three — zero originally, plus three, plus four, and we've never added five. So how can we fix that? Yeah. Can I add N plus one? Yeah, we can do N plus one, exactly. So the range, remember, grabs — oh, plus one — the range grabs these values, you know, as numbers that it's working with. So \"start\" is okay, \"end\" is okay, but we go up to but not including \"end,\" right? So if we go to \"end plus one,\" we're going to go up to but not including \"end plus one.\" So if we run it now, it looks much better. So we've got I is 3, I is 4, I is 5, and the sum is 12. Perfect.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=2594s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G17",
+      "category": "unsupported",
+      "question": "How do Python dictionaries work?",
+      "score": 1,
+      "possible": 1,
+      "passed": true,
+      "checks": [
+        {
+          "check": "exact_not_covered",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "Not covered by the lectures.",
+        "citations": [],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    }
+  ]
+}

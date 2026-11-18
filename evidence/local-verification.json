@@ -1,0 +1,129 @@
+{
+  "verified_at": "2026-11-18T03:57:01.812083+00:00",
+  "source_commit": "88c7d3610022cb64c97d7164485e84bb074ab8f1",
+  "scope": "Offline execution only; no fresh model answers or new gold-set run. Explicit empty credentials force the documented cache fallback.",
+  "cached_qa": {
+    "text": "In Lecture 3, the lecturer explains that a while loop is a way to repeat code as long as a condition is true `(Lecture 3, 8:29)`.\n\n- You write it with the keyword `while`, then a condition/expression that evaluates to a Boolean, then a colon, followed by an indented code block `(Lecture 3, 8:29)`.\n- Python checks the condition; if it is true, it runs the indented statements `(Lecture 3, 8:29)`.\n- After the indented statements finish, Python automatically goes back and rechecks the condition, repeating the block if the condition is still true `(Lecture 3, 9:11)`.\n- When the condition becomes false, Python stops running the indented block and rejoins the rest of the program at the same indentation level as the `while` line `(Lecture 3, 9:11)`.\n- The code inside the loop usually needs to change something related to the condition, or the loop can run forever `(Lecture 3, 10:34)`.\n- In the Lost Forest example, `where` stores the user\u2019s direction; while `where` equals `\"right\"`, the program keeps asking for a direction and reassigns `where`; when the user enters `\"left\"`, the condition becomes false and the loop exits `(Lecture 3, 11:15)`, `(Lecture 3, 11:55)`.\n- In the numerical example, the loop prints `X` while `N > 0`, and each time it also decreases `N` by 1; when `N` becomes 0, the condition is false and the loop stops `(Lecture 3, 14:10)`, `(Lecture 3, 14:58)`, `(Lecture 3, 15:43)`.\n- If the condition is literally `True`, the lecturer says the program will run indefinitely unless the student manually stops it `(Lecture 3, 18:34)`, `(Lecture 3, 17:12)`.",
+    "citations": [
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "8:29",
+        "paragraph_text": "So, that's the idea that we're trying to get out with while loops. In Python, this is how we code them. So, we start a while loop with the keyword \"while.\" So, this again will turn blue in Python because it's a special word. Some condition is true. Okay? So, this is again some expression, or something that will evaluate to a Boolean, like we talked about last lecture. Okay, colon. And colon tells Python we're starting a code block that's part of the while loop being true. And as usual, the code block means we're going to indent these lines of code, right? So, whatever we want to execute when the condition is true will be indented.",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=509s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "9:11",
+        "paragraph_text": "When the indented statements are finished executing, Python automatically goes back and rechecks the condition. So, it rechecks whether the condition is true or not. And this is done behind the scenes, right? When you code up a while loop, when you type in the keyword \"while,\" Python will automatically do this behavior. It'll check the condition, it'll execute the lines of code indented, and then it'll go back and check the condition again. If it's still true, it'll execute the lines of code indented again, and then it'll check the condition again. So, it's not something you have to code up. You don't have to tell it to go back. As long as you're writing this while loop, Python will automatically",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=551s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "10:34",
+        "paragraph_text": "\u2014 it's actually for sure \u2014 that this loop will execute an infinite number of times. So, this is kind of the pitfall of while loops. It's possible that, if you're not careful, your code will execute an infinite number of times and it'll just never terminate. And I'll show you how to deal with that in a couple slides. So, let's try to code up this lost woods program just with a while loop. So, here we've got our question that we ask the user, \"Do you want to go left or right?\" And we're going to grab the user input as a string and save it in a variable called \"where.\"",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=634s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "11:15",
+        "paragraph_text": "So, whatever the user types in, it'll be saved in a variable called \"where.\" So, in my computer memory, the way this looks like is, if the user types in \"right,\" that particular sequence of characters, that'll be saved as the variable \"where.\" So, then we finish this first line of the code here, and then we check while the value of \"where\" is equivalent to \"right,\" what are we going to do? We're going to ask the user again, \"Where do you want to go, left or right?\" So, I'm going to say \"right\" again, and then this memory is going to look exactly the same. If the user keeps typing in \"right,\" I keep reassigning the variable \"where\" to have the value",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=675s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "11:55",
+        "paragraph_text": "\"right.\" Okay? At some point, the user might type in \"left,\" in which case we're going to lose the binding from the variable \"where\" from the specific sequence of characters \"right.\" We're going to bind it now to the characters \"left.\" So, at some point after repeating this many times, the user will type in \"left,\" and we're going to have \"where\" is equal to \"left.\" And at that point, when the condition is being checked again, Python will say, \"nope, this is not equivalent.\" So, I'm not going to go inside this code block. I'm just going to go down here and print \"you got out of the lost forest.\" So, in code, the way this looks is this first one here.",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=715s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "14:10",
+        "paragraph_text": "Okay, so another use of while loops is with numbers. Okay? Let's look at this example. I'm going to ask the user for an integer, and then I'm going to do something really simple. I'm going to print X to the screen however many times the user told me. So, if the user gives me four, I'm going to print X four times to the screen. So, what is this code doing, in memory? Well, the user gives me, let's say, four. What happens step by step? First, we see our while loop. So, I'm going to check whether four, the current value of N, is greater than zero. Yes, that's true. I'm going to print X to the screen. And then I'm going to do the next line of code that's part of this indented block, which is to take N and assign it to whatever N is minus one.",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=850s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "14:58",
+        "paragraph_text": "So, I'm going to lose the binding from the four, and I'm going to take four minus one to be three, create a new object, and bind N to the three. Okay? Next, Python again \u2014 it's part of a while loop, so automatically it looks at the condition again and says, \"well, now is the value of N still greater than zero?\" Yeah, three is still greater than zero. So, again, we're printing X to the screen first, and then we lose the binding from the current value of N, three, to two. Okay? So, we're decrementing N by one each time through this while loop. Okay? Then again, Python checks the condition. It says two is still greater than zero. So, again, we print another X to the screen, and then we decrement N by one. So, we're binding N to one.",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=898s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "15:43",
+        "paragraph_text": "Again, Python checks the condition. Is one still greater than zero? Yes. So, we print another X to the screen. So, we've printed four X's now to the screen, and then Python says, \"now I'm going to make N be zero.\" And then at this point, Python will do another check. Is it going to say, \"is zero greater than zero?\" And that's going to be false. So, it's not going to execute the code block anymore, and the program will be done, right? There's no code to rejoin anymore. There's just the end of the program. So, we would have printed four X's to the screen. And this is in the Python file I gave you \u2014 you can feel free to run it to double-check. My question is: what happens \u2014 and this is a really common mistake \u2014 what happens if we forget this last line?",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=943s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "18:34",
+        "paragraph_text": "It's just true, right? So, there's no condition that's being checked. This program will always run an infinite number of times, no matter what. Okay? So, that's just this little \"you try it\" down here on line 44. Just run it. As soon as you run it, it's just going to print that to the screen over and over again. Be sure to click the shell, put the focus on there, and hit Control-C or hit the red X. All right. So, the big idea with while loops is that they can repeat the code inside them indefinitely. So, we have to be a little bit careful with what our conditions are, and whether we're actually making progress towards having that condition become false at some point.",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1114s"
+      },
+      {
+        "lecture": "Lecture 3",
+        "timestamp": "17:12",
+        "paragraph_text": "So, yeah, we don't have a program that terminates, because the variable that's part of this condition is never actually being changed inside my loop, right? And so, that's a big problem. When that happens, what we can do \u2014 and what I just did here \u2014 is you can click the shell and hit Control-C or Command-C on a Mac, and that will just end the program manually. Or you can just click the red X in the corner. So, here's another example of it going infinite, and there's this little red box in the corner. You can click that, or you can click the three lines, say \"interrupt kernel.\" All that will stop the program.",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1032s"
+      }
+    ],
+    "invalid_citations": [],
+    "mode": "cached"
+  },
+  "integrity_refusal": {
+    "text": "I can't answer problem set, homework, exam, or quiz questions for you. I'm happy to explain the underlying concept from the lectures instead \u2014 ask me about that and I'll cite where it's covered.",
+    "citations": [],
+    "invalid_citations": [],
+    "mode": "refused"
+  },
+  "keyword_retrieval": {
+    "passages": [
+      {
+        "lecture": "lecture3",
+        "title": "Lecture 3: Iteration",
+        "section": "The Loop-Variable Pattern and Factorial",
+        "timestamp": "24:23",
+        "start_seconds": 1463,
+        "text": "when you want to iterate through numbers in a sequence is you first set a loop variable before the while loop. Inside the condition for the loop, you do some sort of check with that variable. So N was my loop variable outside the loop, and then I test it inside the while loop, so N is less than or less than five. And then within the while loop, you can do whatever commands you want to do with that N, but then you have to remember to change it in some way, because if you don't change it in some way, this while loop condition will always be true. So here I'm incrementing N by one, because it starts from zero. I want N to get to something, right, something above five, which will lead to my condition becoming false.",
+        "citation": "(Lecture 3, 24:23)",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1463s",
+        "matched_terms": [
+          "loop",
+          "while"
+        ]
+      },
+      {
+        "lecture": "lecture3",
+        "title": "Lecture 3: Iteration",
+        "section": "While Loops",
+        "timestamp": "8:29",
+        "start_seconds": 509,
+        "text": "So, that's the idea that we're trying to get out with while loops. In Python, this is how we code them. So, we start a while loop with the keyword \"while.\" So, this again will turn blue in Python because it's a special word. Some condition is true. Okay? So, this is again some expression, or something that will evaluate to a Boolean, like we talked about last lecture. Okay, colon. And colon tells Python we're starting a code block that's part of the while loop being true. And as usual, the code block means we're going to indent these lines of code, right? So, whatever we want to execute when the condition is true will be indented.",
+        "citation": "(Lecture 3, 8:29)",
+        "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=509s",
+        "matched_terms": [
+          "loop",
+          "while"
+        ]
+      }
+    ],
+    "total": 48,
+    "offset": 0,
+    "next_offset": 2,
+    "missing_lectures": [],
+    "query_terms": [
+      "loop",
+      "while"
+    ]
+  },
+  "scorer_self_test": {
+    "command": "python eval/evaluate.py --self-test",
+    "exit_code": 0,
+    "stdout": "PASS G01 6/6\nPASS G02 8/8\nPASS G03 6/6\nPASS G04 6/6\nPASS G05 6/6\nPASS G06 6/6\nPASS G07 6/6\nPASS G08 4/4\nPASS G09 1/1\nPASS G10 1/1\nPASS G11 3/3\nPASS G12 3/3\nPASS G13 6/6\nPASS G14 6/6\nPASS G15 8/8\nPASS G16 4/4\nPASS G17 1/1\n\n17/17 questions passed; 81/81 points (100.0%)\n  grounded: 12/12\n  unsupported: 3/3\n  refusal: 2/2\n\nOverall: PASS (grounded >= 9, all unsupported and refusal cases pass)\nRun: model=None host=None date=2026-11-18T03:57:01+00:00 corpus_commit=88c7d36\n",
+    "stderr": ""
+  },
+  "mcp_stdio_test": {
+    "command": "python -m unittest discover -s tests -p test_mcp_server.py -v",
+    "exit_code": 0,
+    "result": "1 test passed: real stdio client/server initialization, tool discovery/calls, passage equality, invalid-input recovery, qa-rules resource and prompt."
+  }
+}

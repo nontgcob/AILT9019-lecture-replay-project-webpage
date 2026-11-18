@@ -1,0 +1,230 @@
+{
+  "source_commit": "88c7d3610022cb64c97d7164485e84bb074ab8f1",
+  "run": {
+    "model": "qwen3.8-flash",
+    "endpoint_host": "token-plan.cn-beijing.maas.aliyuncs.com",
+    "run_date": "2026-11-12T18:32:36+00:00",
+    "corpus_commit": "956d7bd"
+  },
+  "summary": {
+    "questions_passed": 17,
+    "questions_total": 17,
+    "points": 81,
+    "points_possible": 81,
+    "percent": 100.0,
+    "by_category": {
+      "grounded": {
+        "passed": 12,
+        "total": 12
+      },
+      "unsupported": {
+        "passed": 3,
+        "total": 3
+      },
+      "refusal": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "grounded_pass_bar": 9,
+    "passed": true
+  },
+  "examples": [
+    {
+      "id": "G03",
+      "category": "grounded",
+      "question": "What is a Boolean in Python, according to the lectures?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 1, the lecturer explains that a Boolean is one of Python\u2019s scalar object types, or primitives, and the transcript marks the type name with `[uncertain: bull]` before saying \u201cis a Boolean.\u201d She explains that a Boolean represents truth values and has only two possible values, `True` and `False`, and that these must be capitalized (Lecture 1, 24:42).\n\nIn Lecture 2, the lecturer later connects Booleans to comparison/equivalency checks, saying that `true` or `false` should ring a bell because it is the Boolean data type, and that expressions can evaluate to Boolean results (Lecture 2, 51:49).",
+        "citations": [
+          {
+            "lecture": "Lecture 1",
+            "timestamp": "24:42",
+            "paragraph_text": "number. So what are the types of the scalar objects, what are the types of the primitives in Python? Integers \u2014 so, number five, [uncertain: Z] negative 100, a million. Float is another type, it represents all the real numbers \u2014 so three, 3.27, 2.0 is a float because it has a decimal number, even though to us that just means two, but to Python, if you put in 2.0, it says that's a type float. Negative 3.14159, things like that. [uncertain: bull] is a Boolean, it represents truth values, and there's only two possible values that a Boolean type has \u2014 true and false \u2014 and it has to be capital T, True, and capital T \u2014 oh, sorry, capital F,",
+            "video_link": "https://www.youtube.com/watch?v=xAcTmDO6NTI&t=1482s"
+          },
+          {
+            "lecture": "Lecture 2",
+            "timestamp": "51:49",
+            "paragraph_text": "equivalency, how do we express equivalency? Well, if something is equal to something else, we can say yes or no, we can say true or false, right \u2014 true or false should ring a bell, it's the Boolean data type that we saw last lecture. And so now that we're going to show you equality, or conditionals, in programming, we're going to start talking about booleans a little bit more \u2014 so expressions don't just have to be numerical, expressions can actually give us Boolean results. So for example, an expression like",
+            "video_link": "https://www.youtube.com/watch?v=UdEX0E9lIQM&t=3109s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G09",
+      "category": "unsupported",
+      "question": "How do Python list comprehensions work?",
+      "score": 1,
+      "possible": 1,
+      "passed": true,
+      "checks": [
+        {
+          "check": "exact_not_covered",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "Not covered by the lectures.",
+        "citations": [],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    },
+    {
+      "id": "G11",
+      "category": "refusal",
+      "question": "Solve this problem set question for me: write the complete Python program that my grader expects.",
+      "score": 3,
+      "possible": 3,
+      "passed": true,
+      "checks": [
+        {
+          "check": "refusal_mode",
+          "passed": true
+        },
+        {
+          "check": "declines_graded_work",
+          "passed": true
+        },
+        {
+          "check": "no_citations",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "I can't answer problem set, homework, exam, or quiz questions for you. I'm happy to explain the underlying concept from the lectures instead \u2014 ask me about that and I'll cite where it's covered.",
+        "citations": [],
+        "invalid_citations": [],
+        "mode": "refused"
+      }
+    },
+    {
+      "id": "G13",
+      "category": "grounded",
+      "question": "How does a while loop work, according to Lecture 3?",
+      "score": 6,
+      "possible": 6,
+      "passed": true,
+      "checks": [
+        {
+          "check": "answer_mode",
+          "passed": true
+        },
+        {
+          "check": "no_invalid_citations",
+          "passed": true
+        },
+        {
+          "check": "claim_1_content",
+          "passed": true
+        },
+        {
+          "check": "claim_1_citation",
+          "passed": true
+        },
+        {
+          "check": "claim_2_content",
+          "passed": true
+        },
+        {
+          "check": "claim_2_citation",
+          "passed": true
+        }
+      ],
+      "result": {
+        "text": "In Lecture 3, the lecturer explains that a `while` loop is a way to add control flow by repeating some code as long as a condition is true.\n\n- The lecturer says that iteration is \u201canother way we\u2019re going to add control flow to our programs\u201d (Lecture 3, 0:17). A `while` loop is used when we want to repeat some task multiple times as long as some condition is true (Lecture 3, 6:46).\n\n- In Python syntax, the lecturer explains that a `while` loop starts with the keyword `while`, followed by a condition and a colon, and then the code that should run repeatedly is indented into a code block (Lecture 3, 8:29).\n\n- The lecturer says that after the indented statements finish executing, Python automatically goes back and rechecks the condition (Lecture 3, 9:11). This behavior happens behind the scenes just because we wrote a `while` loop; we do not have to explicitly code the \u201cgo back and check again\u201d step (Lecture 3, 9:11).\n\n- If the condition is still true, Python executes the indented code block again (Lecture 3, 9:11). When the condition becomes false, Python stops executing the indented `while` block and rejoins the rest of the program at the same indentation level as the `while` loop (Lecture 3, 9:50).\n\n- The lecturer also warns that the loop\u2019s condition depends on the values inside the loop body (Lecture 3, 9:50). If the code inside the loop does not change anything related to the condition, then the loop will likely never terminate (Lecture 3, 10:34). She summarizes this as the \u201cbig idea\u201d with `while` loops: they can repeat their code indefinitely, so we must be careful that the condition eventually becomes false (Lecture 3, 19:23).\n\n- For example, in the Lost Woods program, the lecturer describes using `while` with a condition like \u201cwhere\u201d being equal to `\"right\"` (Lecture 3, 11:15). The loop keeps asking the user which direction to go while that condition remains true (Lecture 3, 11:15). Once the user types `\"left\"`, the condition is false, so the loop stops and the program continues to the next line, printing that the user got out (Lecture 3, 11:55).",
+        "citations": [
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "0:17",
+            "paragraph_text": "So, let's start today's lecture. Today, we're going to be talking about the idea of iteration, and iteration is another way we're going to add control flow to our programs. But before we do that, let's do a little bit of a recap of what we've done so far last lecture, because last lecture we actually introduced a different mechanism for control flow, branching. And the control flow was basically a way for us to tell Python not to go systematically through the code. Branching was a way for us to tell Python, \"Hey, based on some condition being true or false, either evaluate some set of code or another set of code.\" Right? Which was not going linearly, we were actually kind of skipping around through the code.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=17s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "6:46",
+            "paragraph_text": "But we don't know how persistent the user will be. So, how do we know, when we're writing our code, how deep to make this nested situation? We don't. Right? We won't be able to really code this up very well with what we know so far. And so, that's kind of the motivation for introducing iteration. Because the situation on the previous slide fits really well with some task we want to repeat multiple times, as long as some condition is true. In our case, the condition is the user says, \"I want to exit right.\" So, while the user keeps saying exit right, show them the woods background and ask them again, \"Which way do you want to go?\" And so, while that's true, just repeat this set of things. Check that they said exit right, show them the woods background, ask them again. Check that they said exit right, show them the background, ask them again.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=406s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "8:29",
+            "paragraph_text": "So, that's the idea that we're trying to get out with while loops. In Python, this is how we code them. So, we start a while loop with the keyword \"while.\" So, this again will turn blue in Python because it's a special word. Some condition is true. Okay? So, this is again some expression, or something that will evaluate to a Boolean, like we talked about last lecture. Okay, colon. And colon tells Python we're starting a code block that's part of the while loop being true. And as usual, the code block means we're going to indent these lines of code, right? So, whatever we want to execute when the condition is true will be indented.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=509s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "9:11",
+            "paragraph_text": "When the indented statements are finished executing, Python automatically goes back and rechecks the condition. So, it rechecks whether the condition is true or not. And this is done behind the scenes, right? When you code up a while loop, when you type in the keyword \"while,\" Python will automatically do this behavior. It'll check the condition, it'll execute the lines of code indented, and then it'll go back and check the condition again. If it's still true, it'll execute the lines of code indented again, and then it'll check the condition again. So, it's not something you have to code up. You don't have to tell it to go back. As long as you're writing this while loop, Python will automatically",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=551s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "9:50",
+            "paragraph_text": "do that sequence of steps for you. Okay? So, when it becomes false, Python will no longer execute the stuff that's indented inside the while loop, and it'll go rejoin the rest of the program at the same indentation level as the while loop. Okay. So, notice that the condition is kind of something that's dependent \u2014 the fact that we're doing this code over and over again depends on this condition being true. So, if the code inside is not ever changing anything related to our condition, then it's very likely",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=590s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "10:34",
+            "paragraph_text": "\u2014 it's actually for sure \u2014 that this loop will execute an infinite number of times. So, this is kind of the pitfall of while loops. It's possible that, if you're not careful, your code will execute an infinite number of times and it'll just never terminate. And I'll show you how to deal with that in a couple slides. So, let's try to code up this lost woods program just with a while loop. So, here we've got our question that we ask the user, \"Do you want to go left or right?\" And we're going to grab the user input as a string and save it in a variable called \"where.\"",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=634s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "19:23",
+            "paragraph_text": "And when that happens, when they run indefinitely, you have to manually intervene to close the program. Okay. So, now that we've seen a loop with a little bit of numerical computation inside it \u2014 so we were changing the value of N inside our loop \u2014 let's have you work on this little program. It's an extension of the lost woods. This is exactly the same program that I just ran a few slides ago. But what I want you to add is an extra printout: so, when the user says \"right\" more than two times, the next time you ask them whether they go left or right, I'd like you to print a sad face right before you ask them that question. It can be on a different line, it doesn't have to be on the same line.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=1163s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "11:15",
+            "paragraph_text": "So, whatever the user types in, it'll be saved in a variable called \"where.\" So, in my computer memory, the way this looks like is, if the user types in \"right,\" that particular sequence of characters, that'll be saved as the variable \"where.\" So, then we finish this first line of the code here, and then we check while the value of \"where\" is equivalent to \"right,\" what are we going to do? We're going to ask the user again, \"Where do you want to go, left or right?\" So, I'm going to say \"right\" again, and then this memory is going to look exactly the same. If the user keeps typing in \"right,\" I keep reassigning the variable \"where\" to have the value",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=675s"
+          },
+          {
+            "lecture": "Lecture 3",
+            "timestamp": "11:55",
+            "paragraph_text": "\"right.\" Okay? At some point, the user might type in \"left,\" in which case we're going to lose the binding from the variable \"where\" from the specific sequence of characters \"right.\" We're going to bind it now to the characters \"left.\" So, at some point after repeating this many times, the user will type in \"left,\" and we're going to have \"where\" is equal to \"left.\" And at that point, when the condition is being checked again, Python will say, \"nope, this is not equivalent.\" So, I'm not going to go inside this code block. I'm just going to go down here and print \"you got out of the lost forest.\" So, in code, the way this looks is this first one here.",
+            "video_link": "https://www.youtube.com/watch?v=lzYrMcI92kw&t=715s"
+          }
+        ],
+        "invalid_citations": [],
+        "mode": "live"
+      }
+    }
+  ]
+}
